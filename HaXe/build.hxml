@@ -1,5 +1,5 @@
 -cp src
--main com.example.caioh.basecrox.MainActivity
+com.example.caioh.basecrox.MainActivity
 -java java
 
 -java-lib jars/android.jar

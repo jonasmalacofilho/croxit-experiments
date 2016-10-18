@@ -11,11 +11,6 @@ class MainActivity extends Activity {
 
     private var wv : WebView;
 
-    static function main() {
-        var m = new MainActivity();
-        m.onCreate(null);
-    }
-
     @:overload
     function onCreate(savedInstanceState : Null<Bundle>)
     {
