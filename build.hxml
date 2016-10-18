@@ -1,0 +1,6 @@
+-cp src
+-main Main
+-java java
+
+-java-lib jars/android.jar
+
