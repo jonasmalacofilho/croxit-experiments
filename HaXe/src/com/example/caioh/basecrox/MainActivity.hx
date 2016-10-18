@@ -25,6 +25,7 @@ class MainActivity extends Activity {
         wv.loadData(html(), "text/html", null);
 
         setContentView(wv);
+	super.onCreate(savedInstanceState);
 
     }
 

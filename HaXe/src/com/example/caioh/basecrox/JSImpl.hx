@@ -1,7 +1,6 @@
 package com.example.caioh.basecrox;
 
 import android.content.Context;
-import android.webkit.JavascriptInterface;
 import android.widget.Toast;
 
 class JSImpl {
@@ -13,7 +12,7 @@ public function new(c : Context)
     this.ctx = c;
 }
 
-@JavaScriptInterface
+@:strict(android.webkit.JavascriptInterface)
 public function showMessage(msg : String)
 {
     Toast.makeText(ctx, msg, Toast.LENGTH_SHORT).show();

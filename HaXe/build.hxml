@@ -3,4 +3,6 @@ com.example.caioh.basecrox.MainActivity
 -java java
 
 -java-lib jars/android.jar
+-cmd mkdir -p ../Java/app/libs
+-cmd cp java/java.jar ../Java/app/libs/haxe.jar
 
