@@ -1,3 +1,5 @@
+package com.example.caioh.basecrox;
+
 import java.Lib;
 import android.app.Activity;
 import android.os.Bundle;
@@ -5,12 +7,12 @@ import android.webkit.WebView;
 import android.webkit.WebChromeClient;
 
 
-class Main extends Activity {
+class MainActivity extends Activity {
 
     private var wv : WebView;
 
     static function main() {
-        var m = new Main();
+        var m = new MainActivity();
         m.onCreate(null);
     }
 
