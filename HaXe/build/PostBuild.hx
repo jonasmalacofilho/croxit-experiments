@@ -1,3 +1,4 @@
+package build;
 import Sys.*;
 import haxe.io.Path;
 import sys.FileSystem;

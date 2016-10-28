@@ -1,11 +1,15 @@
+
+-D android
+--macro build.Pre.build()
+
+
 -cp src
 com.example.caioh.basecrox.MainActivity
 -java java
 
--java-lib jars/android.jar
-
 --next
 
 --interp
--main PostBuild
+-cp build
+-main build.PostBuild
 
