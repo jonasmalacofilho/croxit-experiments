@@ -1,0 +1,4 @@
+---
+platform: "android"
+package : "com.example.baseCrox"
+version : "25"

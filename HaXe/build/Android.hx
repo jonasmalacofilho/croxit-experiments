@@ -37,6 +37,7 @@ class Android
     {
         if(version < '14')
             throw "Minimum Android SDK supported is 14";
+        //is ANDROID_HOME or ANDROID the default?
         var base = Sys.getEnv("ANDROID_HOME");
 
         return base + "/platforms/android-" + version + "/android.jar";

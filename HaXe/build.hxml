@@ -1,7 +1,7 @@
 
 -D android
+-lib yaml
 --macro build.Pre.build()
-
 
 -cp src
 com.example.caioh.basecrox.MainActivity
