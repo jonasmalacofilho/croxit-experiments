@@ -1,15 +1,18 @@
 
 -D android
 -lib yaml
---macro build.Pre.build()
 
 -cp src
-com.example.caioh.basecrox.MainActivity
+
+--macro build.Pre.build()
+
+-main MainFuck
+
 -java java
 
 --next
 
 --interp
--cp build
+-cp src
 -main build.PostBuild
 
