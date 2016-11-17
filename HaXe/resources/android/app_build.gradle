@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion $version
+    compileSdkVersion ::sdk_version::
     buildToolsVersion "24.0.3"
 
     defaultConfig {
-        applicationId "$package"
+        applicationId "::package::"
         minSdkVersion 17
-        targetSdkVersion $version
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion ::sdk_version::
+        versionCode ::version_code::
+        versionName "::version_name::"
     }
     buildTypes {
         release {
@@ -24,6 +24,4 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.2.0'
 }

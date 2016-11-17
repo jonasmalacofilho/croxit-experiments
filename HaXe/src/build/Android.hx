@@ -10,9 +10,8 @@ class Android
             throw "No Android SDK found! Install Android SDK or add 'Android' Enviroment Var pointing to your sdk folder";
         var plat_path = basePath + "/" + "platforms/";
         var plats = FileSystem.readDirectory(plat_path);
-        trace(plat_path);
-        trace(basePath);
         var versions = new Array<String>();
+
         for(p in plats)
         {
             if(FileSystem.isDirectory(plat_path + p))

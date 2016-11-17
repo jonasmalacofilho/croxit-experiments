@@ -1,14 +1,8 @@
-import java.Lib;
-import android.app.Activity;
-import android.os.Bundle;
-import android.webkit.WebView;
-import android.webkit.WebChromeClient;
-
-
 class Main
 {
+    //This should be the User's main function (here as an example)
     public static function main()
     {
-       
+        trace("fu?");
     }
 }

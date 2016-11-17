@@ -4,13 +4,11 @@ import yaml.util.ObjectMap;
 
 class BuildFile
 {
-    static var data : AnyObjectMap;
+    var data : AnyObjectMap;
 
     public function new(filename : String)
     {
-        trace("fuu?");
-        data = Yaml.read("build.yaml");
-        trace("Whaa?");  
+        data = Yaml.read(filename);  
     }
 
     public function getPackage()
@@ -30,13 +28,22 @@ class BuildFile
 
     public function getVersionCode()
     {
-        return data.get("version_code");
+        return Std.parseInt(data.get("version_code"));
     }
 
-    public function getVersion()
+    public function getVersionName()
     {
         //TODO: Better name
-        return data.get("version_str");
+        return data.get("version_name");
+    }
+
+    public function getAppName()
+    {
+        return data.get("appname");
+    }
+    public function getMain()
+    {
+        return data.get("main");
     }
 
 }

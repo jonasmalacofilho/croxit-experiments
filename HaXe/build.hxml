@@ -1,13 +1,8 @@
 
--D android
 -lib yaml
-
 -cp src
 
 --macro build.Pre.build()
-
--main MainFuck
-
 -java java
 
 --next
@@ -15,4 +10,3 @@
 --interp
 -cp src
 -main build.PostBuild
-
