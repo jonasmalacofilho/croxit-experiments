@@ -1,8 +1,8 @@
 package build;
 import haxe.macro.Compiler;
 import build.yaml.BuildFile;
-import build.templates.android.app.MainGenerator;
-import build.templates.android.app.AndroidProject;
+import build.templates.android.MainGenerator;
+import build.templates.android.AndroidProject;
 using haxe.macro.TypeTools;
 
 class Pre
@@ -33,7 +33,7 @@ class Pre
             var version_code = build_file.getVersionCode();
             MainGenerator.simple(pkg, main);
 
-            AndroidProject.gen(name,pkg,sdk,version_str,version_code);
+            AndroidProject.genDependencies(name,pkg,sdk,version_str,version_code);
         }
     }
 }

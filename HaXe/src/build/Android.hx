@@ -6,8 +6,10 @@ class Android
     public static function getPlatforms() : Array<String>
     {
         var basePath = Sys.getEnv("ANDROID_HOME");
+
         if(basePath == null || basePath == "")
             throw "No Android SDK found! Install Android SDK or add 'Android' Enviroment Var pointing to your sdk folder";
+            
         var plat_path = basePath + "/" + "platforms/";
         var plats = FileSystem.readDirectory(plat_path);
         var versions = new Array<String>();

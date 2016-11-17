@@ -1,4 +1,4 @@
-package build.templates.android.app;
+package build.templates.android;
 import haxe.macro.*;
 
 class MainGenerator

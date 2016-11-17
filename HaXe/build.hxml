@@ -3,7 +3,7 @@
 -cp src
 
 --macro build.Pre.build()
--java java
+-java temp/java.jar
 
 --next
 

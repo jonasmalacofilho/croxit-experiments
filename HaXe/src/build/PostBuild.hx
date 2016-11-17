@@ -2,7 +2,7 @@ package build;
 import Sys.*;
 import haxe.io.Path;
 import sys.FileSystem;
-
+import build.templates.android.AndroidProject;
 using StringTools;
 
 enum Platform {
@@ -11,8 +11,12 @@ enum Platform {
 }
 
 class PostBuild {
-	static var JAR_PATH = Path.normalize("java/java.jar");
-	static var EXPORT_PATH = Path.normalize("../Java/app/libs");
+	static var JAR_PATH = Path.normalize("temp/java.jar");
+	static var MANIFEST_PATH = Path.normalize("temp/AndroidManifest.xml");
+	static var MAIN_GRADLE = Path.normalize("temp/build.gradle");
+	static var APP_GRADLE = Path.normalize("temp/app_build.gradle");
+
+	static var EXPORT_PATH = Path.normalize("Java/");
 
 	static var platform = switch Sys.systemName().toLowerCase() {
 		case "windows": Windows;
@@ -37,11 +41,21 @@ class PostBuild {
 		if (exit != 0) throw "Copy failed";
 	}
 
+	static function clean()
+	{
+		FileSystem.deleteDirectory("temp");
+	}
+
 	static function main()
 	{
 		Sys.println("Running post-build tasks");
 		Sys.println('Platform is $platform');
-		copy(JAR_PATH, Path.join([EXPORT_PATH, "haxe.jar"]));
+		copy(JAR_PATH, Path.join([EXPORT_PATH,"app","libs", "haxe.jar"]));
+		copy(MANIFEST_PATH, Path.join([EXPORT_PATH, "app","src","main", "AndroidManifest.xml"]));
+		copy(MAIN_GRADLE, Path.join([EXPORT_PATH, "build.gradle"]));
+		copy(APP_GRADLE, Path.join([EXPORT_PATH,"app", "build.gradle"]));
+
+		AndroidProject.genOther();
 		Sys.println("Post-build tasks completed successfully");
 	}
 }

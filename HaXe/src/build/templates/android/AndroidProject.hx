@@ -1,14 +1,17 @@
-package build.templates.android.app;
+package build.templates.android;
 import sys.FileSystem;
 import sys.io.File;
 
 class AndroidProject
 {
-    static var EXPORT_PATH = "./java/";
+    static var EXPORT_PATH = "./temp/";
     static var BASE_DIR = "./resources/android/";
     
-    public static function gen(app_name : String, pkg : String, sdk_version : String, ?version_name : String, ?version_code : Int)
+    public static function genDependencies(app_name : String, pkg : String, sdk_version : String, ?version_name : String, ?version_code : Int)
     {
+        if(!FileSystem.exists("./temp"))
+            FileSystem.createDirectory("temp");
+
         var read_dir = FileSystem.readDirectory(BASE_DIR);
         for(file in read_dir)
         {
@@ -40,8 +43,15 @@ class AndroidProject
             });
 
             File.saveContent(EXPORT_PATH + file, new_content);
-            
         }    
 
+    }
+
+
+    //Extra contents
+    public static function genOther()
+    {
+        File.saveContent("Java/settings.gradle", "include ':app'");
+        File.copy("./resources/android/build.gradle", "./Java/build.gradle");
     }
 }
