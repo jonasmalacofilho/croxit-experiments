@@ -34,6 +34,7 @@ class Pre
             MainGenerator.simple(pkg, main);
 
             AndroidProject.genDependencies(name,pkg,sdk,version_str,version_code);
+            AndroidProject.genOther();
         }
     }
 }

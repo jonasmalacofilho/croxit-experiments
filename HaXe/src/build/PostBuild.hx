@@ -15,6 +15,7 @@ class PostBuild {
 	static var MANIFEST_PATH = Path.normalize("temp/AndroidManifest.xml");
 	static var MAIN_GRADLE = Path.normalize("temp/build.gradle");
 	static var APP_GRADLE = Path.normalize("temp/app_build.gradle");
+	static var SETTINGS_GRADLE = Path.normalize("temp/settings.gradle");
 
 	static var EXPORT_PATH = Path.normalize("Java/");
 
@@ -54,8 +55,8 @@ class PostBuild {
 		copy(MANIFEST_PATH, Path.join([EXPORT_PATH, "app","src","main", "AndroidManifest.xml"]));
 		copy(MAIN_GRADLE, Path.join([EXPORT_PATH, "build.gradle"]));
 		copy(APP_GRADLE, Path.join([EXPORT_PATH,"app", "build.gradle"]));
-
-		AndroidProject.genOther();
+		copy(SETTINGS_GRADLE, Path.join([EXPORT_PATH, "settings.gradle"]));
+		
 		Sys.println("Post-build tasks completed successfully");
 	}
 }

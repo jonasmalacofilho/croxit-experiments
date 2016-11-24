@@ -51,7 +51,7 @@ class AndroidProject
     //Extra contents
     public static function genOther()
     {
-        File.saveContent("Java/settings.gradle", "include ':app'");
-        File.copy("./resources/android/build.gradle", "./Java/build.gradle");
+        File.saveContent("temp/settings.gradle", "include ':app'");
+        File.copy("./resources/android/build.gradle", "./temp/build.gradle");
     }
 }

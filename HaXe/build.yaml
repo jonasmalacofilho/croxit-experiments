@@ -1,7 +1,7 @@
 ---
 platform: android
 package : com.example.basecrox
-sdk_version : "23"
+sdk_version : "25"
 appname : Base Crox
 version_code : 1
 version_name : 1.0
