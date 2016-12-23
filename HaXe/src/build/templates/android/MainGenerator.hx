@@ -28,7 +28,7 @@ class MainGenerator
             override function onCreate(savedInstanceState : android.os.Bundle)
             {
                 wv = new android.webkit.WebView(this);
-                wv.setWebChromeClient(new android.webkit.WebViewClient());
+                wv.setWebChromeClient(new android.webkit.WebChromeClient());
                 wv.getSettings().setJavaScriptEnabled(true);
                 wv.loadData(html(), "text/html", null);
 
